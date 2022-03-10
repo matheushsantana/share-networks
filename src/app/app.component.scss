@@ -1,4 +1,36 @@
 .navbar{
-    background-color: none;
+    background: white;
     border: none;
+}
+
+#btn-login{
+    color: rgb(80, 80, 80);
+}
+
+#btn-cadastro{
+    border: 2px solid rgb(80, 80, 80);
+    border-radius: 20px;
+    color: rgb(80, 80, 80);
+    font-weight: 600;
+}
+
+.roda-pe{
+    padding-top: 20px;
+    text-align: center;
+    list-style: none;
+    background-color: black;
+}
+
+#copyrigth{
+    font-size: 14px;
+    color: white;
+    padding-bottom: 15px;
+    margin: 0px;
+}
+
+#name{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 5px;
 }

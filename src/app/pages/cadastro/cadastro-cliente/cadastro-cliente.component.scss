@@ -1,0 +1,66 @@
+.container{
+    text-align: center;
+}
+
+.conteudo{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    height: 60vh;
+}
+
+#titulo{
+    text-align: left;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+#desc{
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: 600;
+    color: rgb(120, 120, 120);
+}
+
+#btn-op-login{
+    margin-left: 2.5%;
+    padding: 10px;
+    font-weight: 700;
+    border: 1px solid rgb(120, 120, 120);
+    border-radius: 30px;
+    color: rgb(40, 40, 40);
+    text-align: left;
+    padding-left: 15%;
+    width: 95%;
+}
+
+#btn-op-login-facebook{
+    margin-left: 2.5%;
+    width: 95%;
+    padding: 10px;
+    font-weight: 700;
+    border: 1px solid #2374E1;
+    border-radius: 30px;
+    color: white;
+    background-color: #2374E1;
+    text-align: left;
+    padding-left: 15%;
+}
+
+#termos{
+    margin-top: 30px;
+    color: rgb(90, 90, 90);
+}
+
+#termos a{
+    color: rgb(90, 90, 90);
+}
+
+#logo-facebook{
+    width: 30px;
+    margin-right: 10px;
+}
+
+#logo-goole{
+    width: 30px;
+    margin-right: 10px;
+}
