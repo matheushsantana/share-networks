@@ -5,9 +5,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CadastroClienteComponent } from './pages/cadastro/cadastro-cliente/cadastro-cliente.component';
 import { LoginComponent } from './pages/login/login/login.component';
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,36 +1,48 @@
 .navbar{
-    background: white;
+    background: #181A20;
     border: none;
+    border-bottom: 0.5px solid rgba(182, 182, 182, 0.322);
 }
 
 #btn-login{
-    color: rgb(80, 80, 80);
+    color: white;
 }
 
 #btn-cadastro{
-    border: 2px solid rgb(80, 80, 80);
+    border: 2px solid white;
     border-radius: 20px;
-    color: rgb(80, 80, 80);
+    color: white;
     font-weight: 600;
 }
 
-.roda-pe{
-    padding-top: 20px;
-    text-align: center;
-    list-style: none;
-    background-color: black;
+.userName{
+    color: white;
+    font-weight: 700;
+    font-size: 19px;
 }
 
-#copyrigth{
-    font-size: 14px;
-    color: white;
-    padding-bottom: 15px;
-    margin: 0px;
+#userName{
+    margin-top: 15px;
 }
 
-#name{
+.user-logado{
+    width: 60%;
+}
+
+#btn-menu{
     color: white;
-    font-size: 18px;
-    font-weight: 600;
-    padding-bottom: 5px;
+}
+
+#col-btn-menu{
+    margin-top: 15px;
+}
+
+#nav-content{
+    width: 100%;
+}
+
+#btn-acesso{
+    margin-top: 7px;
+    position: absolute;
+    right: -20px;
 }

@@ -1,9 +1,23 @@
-<nav class="navbar sticky-top navbar-expand-lg">
+<nav class="navbar sticky-top navbar-expand-lg" *ngIf="navBar == true">
   <div class="container-fluid">
-    <img src="assets/logo.png" width="130px" [routerLink]="['/']">
-    <div class="d-md-flex justify-content-md-end">
-      <button class="btn" type="button" id="btn-login" [routerLink]="['/login']">Login</button>
-      <button class="btn" type="button" id="btn-cadastro" [routerLink]="['/cadastro/usuario']">Cadastre-se</button>
+    <div class="row" id="nav-content">
+      <div class="col-5">
+        <img src="assets/logo-white.png" width="130px" [routerLink]="['/']">
+      </div>
+      <div class="col-6" *ngIf="userLogado != false" id="userName">
+        <span class="userName">Olá, Matheus👋</span>
+      </div>
+      <div class="col-7"  *ngIf="userLogado != true" id="btn-acesso">
+        <div class="d-md-flex justify-content-md-end">
+          <button class="btn" type="button" id="btn-login" [routerLink]="['/login']">Login</button>
+          <button class="btn" type="button" id="btn-cadastro" [routerLink]="['/cadastro/usuario']">Cadastre-se</button>
+        </div>
+      </div>
+      <div class="col-1" *ngIf="userLogado != false" id="col-btn-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" id="btn-menu">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+      </div>
     </div>
   </div>
 </nav>
@@ -11,12 +25,3 @@
 <router-outlet></router-outlet>
 
 
-<div class="roda-pe">
-  <p id="name">Share Networks</p>
-  <p>
-    <a href=""><img src="assets/fotos/linkedin.svg" style="margin-right: 15px;"></a>
-    <a href=""><img src="assets/fotos/instagram.svg" style="margin-right: 15px;"></a>
-    <a href=""><img src="assets/fotos/facebook.svg"></a>
-  </p>
-  <p id="copyrigth">© Copyright 2022-2022 sharenetworks.com.br</p>
-</div>

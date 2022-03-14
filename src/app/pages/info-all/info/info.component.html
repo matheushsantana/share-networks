@@ -1,11 +1,150 @@
 <div class="container">
     <div class="conteudo">
-        <p class="titulo">Tudo em um só lugar</p>
         <span class="slogan">Seus contatos e redes sociais em um só lugar</span>
         <p class="descricao">Conheça a facilidade de compartilhar<br>suas redes para seus clientes e amigos</p>
         <button class="btn" id="comeceAgora">Começe agora!</button>
         <img id="img-mexendo-celular" src="assets/fotos/mexendo-celular.png">
         <p class="mostre">Mostre quem você é, o que você faz, o que você vende.</p>
         <p class="descricao-2">Personalize do seu jeito para ter uma identidade única.</p>
+        <img id="img-mexendo-celular" src="assets/fotos/mexendo-celular-2.png">
+    </div>
+    <div class="planos">
+        <p id="planos-titulo">Nossos planos</p>
+        <p id="planos-sub-titulo">Aproveite tudo que Share Networks pode te entragar.</p>
+        <div class="btn-planos gap-2">
+            <p id="btn-anual" (click)="mudaPlano(1)" class="btn btn-ativo">Anual <a>37% OFF</a></p>
+            <p id="btn-mensal" (click)="mudaPlano(2)" class="btn">Mensal</p>
+        </div>
+        <div class="planos-desc">
+            <p id="desc-titulo">VALOR DE LANÇAMENTO</p>
+            <p id="desc-name">Share Networks</p>
+            <p id="desc-valor">R${{valor}}</p>
+            <p id="desc-desc">por mês no plano {{plano}}</p>
+            <button id="btn-assine" class="btn">Assine agora!</button>
+            
+            <ul class="vantagens">
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Customizações de cores e alinhamento
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    seção Boas-vindas com CTA
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Seção Aprensentação com imagens e textos
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    seção Catálogo com ítens imilitados
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    seção Links com miniatura e emoji
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Seção Ícones com +10 redes sociais
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Seção Formulariuo integrado com Email, mailchimp e Google Sheets
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Facebook Pixel, Google Analytics e Tag Maneger
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Múltiplas Ações
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Dados sobre acessos visualizações e cliques
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Vídeos do Youtube, vimeo e Twitch
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Áudios do Spotify, Apple Music e Deezer
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Imagens avulsas
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                    </svg>
+                    Suporte Exclusivo
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
+<div class="roda-pe">
+    <p id="name">Share Networks</p>
+    <p>
+      <a href=""><img src="assets/fotos/linkedin.svg" style="margin-right: 15px;"></a>
+      <a href=""><img src="assets/fotos/instagram.svg" style="margin-right: 15px;"></a>
+      <a href=""><img src="assets/fotos/facebook.svg"></a>
+    </p>
+    <p id="copyrigth">© Copyright 2022-2022 sharenetworks.com.br</p>
+  </div>

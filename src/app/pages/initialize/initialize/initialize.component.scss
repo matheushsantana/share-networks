@@ -1,0 +1,213 @@
+.voltar{
+    border-bottom: 0.5px solid rgba(182, 182, 182, 0.322);
+    display: flex;
+}
+
+.titleEtapa{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#titleEtapa{
+    color: white;
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+}
+
+#btn-voltar{
+    color: white;
+    background-color: #3A3F50;
+    border-radius: 20px;
+    margin: 15px;
+}
+
+// etapa 0
+
+.content{
+    text-align: center;
+    height: 100%;
+}
+
+.titulo{
+    margin-top: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.sub-titulo{
+    color: white;
+    font-weight: 600;
+}
+
+.tab-initialize{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: #262A34;
+    text-align: center;
+}
+
+.tab-initialize svg{
+    color: white;
+    background-color: #0712aa;
+    border-radius: 30px;
+    border: 3px solid #181A20;
+    position: relative;
+    top: -25px;
+    padding: 5px;
+}
+
+//etapa 1
+
+.etapa-1{
+    margin-top: 30px;
+}
+
+.titulo-etapa-2{
+    color: white;
+    text-align: left;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+.div-titulo{
+    width: 70%;
+}
+
+.container{
+    width: 90%;
+}
+
+form{
+    margin-top: 30px;
+}
+
+form label {
+    color: #5e6272;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+form input{
+    border: 2px solid #5e6272;
+    background-color: transparent;
+    border-radius: 10px;
+    height: 50px;
+    color: white;
+    font-weight: 600;
+}
+
+form select{
+    border: 2px solid #5e6272;
+    background-color: transparent;
+    border-radius: 10px;
+    height: 50px;
+    color: white;
+    font-weight: 600;
+}
+
+#btn-avançar{
+    margin-top: 70px;
+    background-color: #5e6272;
+    border-radius: 20px;
+    width: 100%;
+    height: 50px;
+    font-weight: 600;
+    color: white;
+}
+
+// etapa 2
+
+#btn-adc-secao{
+    margin-top: 30px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#btn-adc-secao svg{
+    margin-left: 10px;
+    color: white;
+    background-color: #0712aa;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+// modal
+
+.modal-header p{
+    font-weight: 600;
+    color: rgb(58, 55, 55);
+}
+
+.modal-content{
+    margin-left: 5%;
+    border-radius: 20px;
+    width: 90%;
+    height: 50%;
+    margin-top: 25%;
+}
+
+.modal-body ul{
+    list-style: none;
+    position: relative;
+    left: -40px;
+}
+
+.modal-body li{
+    font-weight: 600;
+    color: rgb(58, 55, 55);
+    margin: 15px;
+}
+
+.modal-body li svg{
+    background-color: rgb(240, 243, 250);
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: black;
+}
+
+//img perfil
+
+.img-perfil{
+    margin-top: 35px;
+    text-align: center;
+}
+
+.img-perfil button{
+    background-color: #5e6272;
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.img-perfil p {
+    color: #5e6272;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+.img-perfil svg {
+    color: #5e6272;
+    border-radius: 50%;
+    border: 2px solid;
+    border-style: dashed;
+    padding: 30px;
+}
+
+.nomeExibicao{
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid rgba(182, 182, 182, 0.322);
+}
