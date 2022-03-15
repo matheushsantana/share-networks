@@ -341,3 +341,74 @@ form textarea{
     margin-top: 50px;
     margin-bottom: 30px;
 }
+
+#title-text-2{
+    margin-top: 20px;
+}
+
+#nameExibicao-2{
+    padding-bottom: 15px;
+    border-bottom: 0.5px solid rgba(182, 182, 182, 0.322);
+}
+
+.sub-etapa-6 .row{
+    border-bottom: 0.5px solid rgba(182, 182, 182, 0.322);
+    margin-bottom: 40px;
+}
+
+.text-miniatura{
+    margin-top: 40px;
+    color: #5e6272;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.img-link{
+    border: solid 2px #5e6272;
+    border-style: dashed;
+    text-align: center;
+    border-radius: 20px;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+.img-link svg{
+    margin-top: 30px;
+    color: #5e6272;
+}
+
+.form-check{
+    margin-top: 15px;
+}
+.form-check label{
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+}
+
+.form-check input{
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+#nameExibicao-3 #label-link{
+    margin-top: 20px;
+}
+
+#icons-funcao-miniatura{
+    padding: 0px;
+}
+
+#icons-funcao-miniatura svg{
+    color: white;
+    background-color: #5e6272;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+#deletar-miniatura{
+    margin-top: 25px;
+}

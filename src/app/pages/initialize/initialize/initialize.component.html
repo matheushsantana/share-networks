@@ -6,7 +6,7 @@
                 d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
         </svg>
         <div class="titleEtapa">
-            <span id="titleEtapa">{{ titleEtapa[etapas] }}</span>
+            <span id="titleEtapa">{{ titleSubEtapa[subEtapa] }}</span>
         </div>
     </div>
     <div class="etapa-0" *ngIf="etapas == 0">
@@ -32,13 +32,13 @@
                 <div class="div-titulo">
                     <p class="titulo-etapa-2">Dê um título para o seu template</p>
                 </div>
-                <form action="">
+                <form #f="ngForm" (ngSubmit)="submitInitialTemplate()">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">TÍTULO DO SITE*</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="titleSiteInput" class="form-label">TÍTULO DO SITE*</label>
+                        <input type="text" class="form-control" id="titleSiteInput" aria-describedby="Título do Site">
                     </div>
-                    <label for="inputState" class="form-label">QUAL O SEU RAMO DE ATUAÇÃO*</label>
-                    <select id="inputState" class="form-select">
+                    <label for="inputRamo" class="form-label">QUAL O SEU RAMO DE ATUAÇÃO*</label>
+                    <select id="inputRamo" class="form-select">
                         <option value="author">Autor (a)</option>
                         <option value="artist">Artista</option>
                         <option value="designer">Designer</option>
@@ -56,7 +56,7 @@
                     </select>
                 </form>
             </div>
-            <button class="btn" id="btn-avançar" [disabled]="true" (click)="avanca(1)">Avançar</button>
+            <button class="btn" type="submit" id="btn-avançar" (click)="avanca(1)">Avançar</button>
         </div>
     </div>
     <div class="etapa-2" *ngIf="etapas == 2">
@@ -159,7 +159,7 @@
                                 aria-describedby="emailHelp">
                         </div>
                         <label for="exampleInputEmail1" class="form-label">SEUS ITENS</label>
-                        <div class="seus-itens">
+                        <div class="seus-itens" (click)="avancaSubOpcoes(5)">
                             <p>ADICIONAR ITEM</p>
                         </div>
                         <button class="btn cancelar" (click)="avanca(0)">Cancelar</button>
@@ -174,7 +174,7 @@
                                 aria-describedby="emailHelp">
                         </div>
                         <label for="exampleInputEmail1" class="form-label">SEUS LINKS</label>
-                        <div class="seus-itens">
+                        <div class="seus-itens" (click)="avancaSubOpcoes(6)">
                             <p>ADICIONAR LINK</p>
                         </div>
                         <button class="btn cancelar" (click)="avanca(0)">Cancelar</button>
@@ -321,6 +321,97 @@
                             <button class="btn salvar">Salvar</button>
                         </div>
                     </div>
+                </div>
+                <div class="sub-etapa-5" *ngIf="subEtapa == 5">
+                    <form action="">
+                        <div class="mb-3" id="nameExibicao-2">
+                            <label for="exampleInputEmail1" class="form-label">NOME DO ITEM</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div class="col-md-6" id="title-text-2">
+                                <label for="inputEmail4" class="form-label">DESCRIÇÃO (OPICIONAL)</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="img-apresentacao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                                class="bi bi-image" viewBox="0 0 16 16">
+                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                <path
+                                    d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z" />
+                            </svg>
+                            <p>ADICIONAR IMAGEM</p>
+                        </div>
+                        <div class="col-md-6" id="title-text-1">
+                            <label for="exampleInputEmail1" class="form-label">TÍTULO DO LINK*</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1">
+                            <br>
+                            <label for="exampleInputEmail1" class="form-label">LINK*</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1">
+                        </div>
+                        <button class="btn cancelar" (click)="avancaSubOpcoes(2)">Cancelar</button>
+                        <button class="btn salvar">Salvar</button>
+                    </form>
+                </div>
+                <div class="sub-etapa-6" *ngIf="subEtapa == 6">
+                    <form action="">
+                        <div class="mb-3" id="nameExibicao-3">
+                            <label for="exampleInputEmail1" class="form-label">TÍTULO DO LINK*</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <label for="exampleInputEmail1" class="form-label" id="label-link">LINK*</label>
+                            <input type="email" class="form-control" id="link" placeholder="https://"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <p class="text-miniatura">MINIATURA</p>
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Imagem
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Emoji
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="img-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                        class="bi bi-image" viewBox="0 0 16 16">
+                                        <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                        <path
+                                            d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z" />
+                                    </svg>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                            <div class="col-1" id="icons-funcao-miniatura">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                                    class="bi bi-plus-lg" viewBox="0 0 16 16" id="add-img">
+                                    <path fill-rule="evenodd"
+                                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" id="deletar-miniatura"
+                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                    <path fill-rule="evenodd"
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <button class="btn cancelar" (click)="avancaSubOpcoes(3)">Cancelar</button>
+                        <button class="btn salvar">Salvar</button>
+                    </form>
                 </div>
             </div>
         </div>

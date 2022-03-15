@@ -7,33 +7,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InitializeComponent implements OnInit {
 
-  etapas: number = 2;
-  subEtapa: number = 0;
+  etapas: number = 0;
+  subEtapa: number = 7;
   auxSubEtapas: boolean = false;
 
-  titleEtapa: string[] = ['', '', 'Monte seu Site', 'Boas-Vindas']
-  titleSubEtapa: string[] = ['Boas-Vindas', 'Apresentação', 'Catálogo', 'Links', 'Redes Sociais']
+  titleSubEtapa: string[] = ['Boas-Vindas', 'Apresentação', 'Catálogo', 'Links', 'Redes sociais', 'Adicionar item', 'Adicionar link', '']
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  submitInitialTemplate(){
+    
+  }
+
   avanca(value: number) {
-    this.auxSubEtapas = false;
-    if (value == 0) {
-      if (this.etapas == 0) {
+    if (this.subEtapa == 5) {
+      this.avancaSubOpcoes(2);
+    } else if(this.subEtapa == 6){
+      this.avancaSubOpcoes(3);
+    }else {
+      this.auxSubEtapas = false;
+      this.subEtapa = 7;
+      if (value == 0) {
+        if (this.etapas == 0) {
+        } else {
+          this.etapas--
+        }
       } else {
-        this.etapas--
+        this.etapas++
       }
-    } else {
-      this.etapas++
     }
   }
 
   avancaOpcoes(value: number) {
     this.auxSubEtapas = true
     this.etapas++
+    this.subEtapa = value
+  }
+
+  avancaSubOpcoes(value: number) {
+    this.auxSubEtapas = true
     this.subEtapa = value
   }
 

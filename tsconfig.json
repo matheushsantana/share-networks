@@ -12,6 +12,8 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "noPropertyAccessFromIndexSignature": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2017",

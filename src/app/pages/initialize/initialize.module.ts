@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { InitializeRoutingModule } from "./initialize-routing.module";
 import { InitializeComponent } from "./initialize/initialize.component";
 
@@ -9,10 +10,12 @@ import { InitializeComponent } from "./initialize/initialize.component";
     ],
     imports: [
         CommonModule,
+        FormsModule,
         InitializeRoutingModule
     ],
     providers: [],
-    bootstrap: []
+    bootstrap: [],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
   })
   export class InitializeModule{
 
