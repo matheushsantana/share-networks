@@ -35,10 +35,11 @@
                 <form #f="ngForm" (ngSubmit)="submitInitialTemplate()">
                     <div class="mb-3">
                         <label for="titleSiteInput" class="form-label">TÍTULO DO SITE*</label>
-                        <input type="text" class="form-control" id="titleSiteInput" aria-describedby="Título do Site">
+                        <input type="text" class="form-control" id="titleSiteInput" aria-describedby="Título do Site"
+                            name="titleSiteInput" [(ngModel)]="initialTemplate.titleSite" required>
                     </div>
                     <label for="inputRamo" class="form-label">QUAL O SEU RAMO DE ATUAÇÃO*</label>
-                    <select id="inputRamo" class="form-select">
+                    <select id="inputRamo" class="form-select" name="inputRamo" [(ngModel)]="initialTemplate.ramo" required>
                         <option value="author">Autor (a)</option>
                         <option value="artist">Artista</option>
                         <option value="designer">Designer</option>
@@ -54,9 +55,9 @@
                         <option value="marketing">Marketing e Comunicação</option>
                         <option value="other">Outro</option>
                     </select>
+                    <button class="btn" type="submit" id="btn-avançar" [disabled]="!f.valid">Avançar</button>
                 </form>
             </div>
-            <button class="btn" type="submit" id="btn-avançar" (click)="avanca(1)">Avançar</button>
         </div>
     </div>
     <div class="etapa-2" *ngIf="etapas == 2">
@@ -400,8 +401,8 @@
                                     <path fill-rule="evenodd"
                                         d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
                                 </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" id="deletar-miniatura"
-                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                                    id="deletar-miniatura" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path
                                         d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                                     <path fill-rule="evenodd"

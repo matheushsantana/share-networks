@@ -5,15 +5,15 @@ import { InitialTemplate } from "./class/initialTemplate";
 @Injectable({
     providedIn: 'root'
 })
-export class initializeService {
+export class InitializeService {
 
     constructor(private db: AngularFireDatabase){ }
 
     insertInitial(initalTemplate: InitialTemplate){
-        this.db.list('initialTemplate').push(initalTemplate)
+       return this.db.list('initialTemplate').push(initalTemplate)
         .then((result: any) =>{
-          console.log(result.key);
+          return result;
         });
-        alert("Cadastrado com Sucesso!");
+        
       }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InitialTemplate } from '../shared/class/initialTemplate';
+import { InitializeService } from '../shared/initialize.service';
 
 @Component({
   selector: 'app-initialize',
@@ -10,16 +12,20 @@ export class InitializeComponent implements OnInit {
   etapas: number = 0;
   subEtapa: number = 7;
   auxSubEtapas: boolean = false;
+  initialTemplate: InitialTemplate;
 
   titleSubEtapa: string[] = ['Boas-Vindas', 'Apresentação', 'Catálogo', 'Links', 'Redes sociais', 'Adicionar item', 'Adicionar link', '']
 
-  constructor() { }
+  constructor(private initializeService: InitializeService) { }
 
   ngOnInit(): void {
+    this.initialTemplate = new  InitialTemplate();
   }
 
   submitInitialTemplate(){
-    
+    this.initializeService.insertInitial(this.initialTemplate).then(m => {
+      console.log('result: ', m)
+    })
   }
 
   avanca(value: number) {
