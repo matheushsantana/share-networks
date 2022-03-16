@@ -39,21 +39,22 @@
                             name="titleSiteInput" [(ngModel)]="initialTemplate.titleSite" required>
                     </div>
                     <label for="inputRamo" class="form-label">QUAL O SEU RAMO DE ATUAÇÃO*</label>
-                    <select id="inputRamo" class="form-select" name="inputRamo" [(ngModel)]="initialTemplate.ramo" required>
-                        <option value="author">Autor (a)</option>
-                        <option value="artist">Artista</option>
+                    <select id="inputRamo" class="form-select" name="inputRamo" [(ngModel)]="initialTemplate.ramo"
+                        required>
+                        <option value="autor">Autor (a)</option>
+                        <option value="artista">Artista</option>
                         <option value="designer">Designer</option>
-                        <option value="entrepreneur">Empreendedor (a)</option>
-                        <option value="photographer">Fotógrafo (a)</option>
-                        <option value="influencer">Influenciador (a)</option>
-                        <option value="infoproductor">Infoprodutor(a)</option>
-                        <option value="education">Educação</option>
+                        <option value="Empreendedor">Empreendedor (a)</option>
+                        <option value="fotografo">Fotógrafo (a)</option>
+                        <option value="influenciador">Influenciador (a)</option>
+                        <option value="infoprodutor">Infoprodutor(a)</option>
+                        <option value="educacao">Educação</option>
                         <option value="health">Saúde e bem estar</option>
                         <option value="food">Alimentos e bebidas</option>
                         <option value="social_projects">ONGs e projetos sociais</option>
                         <option value="ecommerce">E-commerce</option>
                         <option value="marketing">Marketing e Comunicação</option>
-                        <option value="other">Outro</option>
+                        <option value="outro">Outro</option>
                     </select>
                     <button class="btn" type="submit" id="btn-avançar" [disabled]="!f.valid">Avançar</button>
                 </form>
@@ -97,40 +98,42 @@
                         </div>
                     </div>
                     <div class="nomeExibicao">
-                        <form action="">
+                        <form #g="ngForm" (ngSubmit)="submitBoasVindas()">
                             <div class="mb-3" id="nameExibicao">
-                                <label for="exampleInputEmail1" class="form-label">NOME DE EXIBIÇÃO</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <label for="nomeExibicao" class="form-label">NOME DE EXIBIÇÃO</label>
+                                <input type="text" class="form-control" id="nomeExibicao" name="nomeExibicao"
+                                    [(ngModel)]="boasVindas.nomeExibicao" aria-describedby="nomeExibicao" required>
                             </div>
                             <div class="col-md-6" id="title-text">
-                                <label for="inputEmail4" class="form-label">TÍTULO EM DESTAQUE</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label for="tituloExibicao" class="form-label">TÍTULO EM DESTAQUE</label>
+                                <textarea class="form-control" id="tituloExibicao" rows="3" name="tituloExibicao"
+                                    [(ngModel)]="boasVindas.tituloEmDestaque" required></textarea>
 
-                                <label for="inputEmail4" class="form-label">TEXTO DE APOIO</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                                <label for="textoApoio" class="form-label">TEXTO DE APOIO</label>
+                                <textarea class="form-control" id="textoApoio" rows="3" name="textoApoio"
+                                    [(ngModel)]="boasVindas.textoDeApoio" required></textarea>
                             </div>
                             <div class="mb-3" id="info-btn-1">
-                                <label for="exampleInputEmail1" class="form-label">TÍTULO DO BOTÃO</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <label for="tituloBotao" class="form-label">TÍTULO DO BOTÃO</label>
+                                <input type="text" class="form-control" id="tituloBotao" name="tituloBotao"
+                                    [(ngModel)]="boasVindas.tituloBotao" aria-describedby="tituloBotao" required>
                             </div>
                             <div class="mb-3" id="info-btn-2">
-                                <label for="exampleInputEmail1" class="form-label">LINK DO BOTÃO</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <label for="linkBtn" class="form-label">LINK DO BOTÃO</label>
+                                <input type="text" class="form-control" id="linkBtn" name="textoApoio"
+                                    [(ngModel)]="boasVindas.linkBotao" aria-describedby="linkBtn" required>
                             </div>
                             <button class="btn cancelar" (click)="avanca(0)">Cancelar</button>
-                            <button class="btn salvar">Salvar</button>
+                            <button class="btn salvar" [disabled]="!g.valid">Salvar</button>
                         </form>
                     </div>
                 </div>
                 <div class="sub-etapa-1" *ngIf="subEtapa == 1">
-                    <form action="">
+                    <form #h="ngForm" (ngSubmit)="submitApresentacao()">
                         <div class="mb-3" id="nameExibicao">
-                            <label for="exampleInputEmail1" class="form-label">TÍTULO DA PAGINA</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <label for="tituloPagina" class="form-label">TÍTULO DA PAGINA</label>
+                            <input type="text" class="form-control" id="tituloPagina" name="tituloPagina"
+                                [(ngModel)]="apresentacao.tituloPagina" aria-describedby="tituloPagina">
                         </div>
                         <div class="img-apresentacao">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
@@ -142,44 +145,47 @@
                             <p>ADICIONAR IMAGEM</p>
                         </div>
                         <div class="col-md-6" id="title-text-1">
-                            <label for="inputEmail4" class="form-label">TÍTULO EM DESTAQUE</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="tituloDestaque" class="form-label">TÍTULO EM DESTAQUE</label>
+                            <textarea class="form-control" id="tituloDestaque" rows="3" name="tituloDestaque"
+                                [(ngModel)]="apresentacao.tituloEmDestaque"></textarea>
 
-                            <label for="inputEmail4" class="form-label">DESCRIÇÃO COMPLETA</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                            <label for="descricaoCompleta" class="form-label">DESCRIÇÃO COMPLETA</label>
+                            <textarea class="form-control" id="descricaoCompleta" rows="3" name="descricaoCompleta"
+                                [(ngModel)]="apresentacao.descricaoCompleta"></textarea>
                         </div>
                         <button class="btn cancelar" (click)="avanca(0)">Cancelar</button>
-                        <button class="btn salvar">Salvar</button>
+                        <button class="btn salvar" [disabled]="!h.valid">Salvar</button>
                     </form>
                 </div>
                 <div class="sub-etapa-2" *ngIf="subEtapa == 2">
-                    <form action="">
+                    <form #i="ngForm" (ngSubmit)="submitApresentacao()">
                         <div class="mb-3" id="nameExibicao">
-                            <label for="exampleInputEmail1" class="form-label">TÍTULO DA PAGINA</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <label for="tituloCatalogo" class="form-label">TÍTULO DA PAGINA</label>
+                            <input type="email" class="form-control" id="tituloCatalogo" name="tituloCatalogo
+                            tituloCatalogo" [(ngModel)]="catalogo.tituloPagina" aria-describedby="tituloCatalogo
+                                tituloCatalogo" required>
                         </div>
                         <label for="exampleInputEmail1" class="form-label">SEUS ITENS</label>
                         <div class="seus-itens" (click)="avancaSubOpcoes(5)">
                             <p>ADICIONAR ITEM</p>
                         </div>
                         <button class="btn cancelar" (click)="avanca(0)">Cancelar</button>
-                        <button class="btn salvar">Salvar</button>
+                        <button class="btn salvar" [disabled]="!i.valid">Salvar</button>
                     </form>
                 </div>
                 <div class="sub-etapa-3" *ngIf="subEtapa == 3">
-                    <form action="">
+                    <form #j="ngForm" (ngSubmit)="submitLinks()">
                         <div class="mb-3" id="nameExibicao">
-                            <label for="exampleInputEmail1" class="form-label">TÍTULO DA PAGINA</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <label for="tituloLink" class="form-label">TÍTULO DA PAGINA</label>
+                            <input type="email" class="form-control" id="tituloLink" name="tituloLink"
+                                [(ngModel)]="links.tituloDaPagina" aria-describedby="tituloLink" required>
                         </div>
                         <label for="exampleInputEmail1" class="form-label">SEUS LINKS</label>
                         <div class="seus-itens" (click)="avancaSubOpcoes(6)">
                             <p>ADICIONAR LINK</p>
                         </div>
                         <button class="btn cancelar" (click)="avanca(0)">Cancelar</button>
-                        <button class="btn salvar">Salvar</button>
+                        <button class="btn salvar" [disabled]="!j.valid">Salvar</button>
                     </form>
                 </div>
                 <div class="sub-etapa-4" *ngIf="subEtapa == 4">
@@ -324,14 +330,15 @@
                     </div>
                 </div>
                 <div class="sub-etapa-5" *ngIf="subEtapa == 5">
-                    <form action="">
+                    <form #k="ngForm" (ngSubmit)="submitItensCatalogo()">
                         <div class="mb-3" id="nameExibicao-2">
-                            <label for="exampleInputEmail1" class="form-label">NOME DO ITEM</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <label for="nomeItem" class="form-label">NOME DO ITEM</label>
+                            <input type="text" class="form-control" id="nomeItem" name="nomeItem"
+                                [(ngModel)]="itemCatalogo.nomeDoItem" aria-describedby="nomeItem" required>
                             <div class="col-md-6" id="title-text-2">
-                                <label for="inputEmail4" class="form-label">DESCRIÇÃO (OPICIONAL)</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                                <label for="descricao" class="form-label">DESCRIÇÃO (OPICIONAL)</label>
+                                <textarea class="form-control" id="descricao" rows="3" name="descricao"
+                                    [(ngModel)]="itemCatalogo.descricao" required></textarea>
                             </div>
                         </div>
                         <div class="img-apresentacao">
@@ -344,25 +351,27 @@
                             <p>ADICIONAR IMAGEM</p>
                         </div>
                         <div class="col-md-6" id="title-text-1">
-                            <label for="exampleInputEmail1" class="form-label">TÍTULO DO LINK*</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1">
+                            <label for="tituloLink" class="form-label">TÍTULO DO LINK*</label>
+                            <input type="text" class="form-control" id="tituloLink" name="tituloLink"
+                                [(ngModel)]="itemCatalogo.tituloLink" required>
                             <br>
-                            <label for="exampleInputEmail1" class="form-label">LINK*</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1">
+                            <label for="link" class="form-label">LINK*</label>
+                            <input type="text" class="form-control" id="link" name="link"
+                                [(ngModel)]="itemCatalogo.link" required>
                         </div>
                         <button class="btn cancelar" (click)="avancaSubOpcoes(2)">Cancelar</button>
-                        <button class="btn salvar">Salvar</button>
+                        <button class="btn salvar" [disabled]="!k.valid">Salvar</button>
                     </form>
                 </div>
                 <div class="sub-etapa-6" *ngIf="subEtapa == 6">
-                    <form action="">
+                    <form #l="ngForm" (ngSubmit)="submitAdicionarLinks()">
                         <div class="mb-3" id="nameExibicao-3">
-                            <label for="exampleInputEmail1" class="form-label">TÍTULO DO LINK*</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                            <label for="exampleInputEmail1" class="form-label" id="label-link">LINK*</label>
-                            <input type="email" class="form-control" id="link" placeholder="https://"
-                                aria-describedby="emailHelp">
+                            <label for="tituloLink" class="form-label">TÍTULO DO LINK*</label>
+                            <input type="text" class="form-control" id="tituloLink"
+                                aria-describedby="tituloLink" name="tituloLink" [(ngModel)]="adicionarLink.tituloLink" required>
+                            <label for="link" class="form-label" id="label-link">LINK*</label>
+                            <input type="text" class="form-control" id="link" placeholder="https://"
+                                aria-describedby="link" name="link" [(ngModel)]="adicionarLink.link" required>
                         </div>
                         <p class="text-miniatura">MINIATURA</p>
                         <div class="row">
@@ -411,8 +420,15 @@
                             </div>
                         </div>
                         <button class="btn cancelar" (click)="avancaSubOpcoes(3)">Cancelar</button>
-                        <button class="btn salvar">Salvar</button>
+                        <button class="btn salvar" [disabled]="!l.valid">Salvar</button>
                     </form>
+                </div>
+                <div class="sub-etapa-7" *ngIf="subEtapa == 7">
+                    <div class="container">
+                        <div class="content">
+                            <p class="etapa-7-sub-titulo">Adicione sessões de conteúdo ao seu site, em seguida clique em avançar para publicar.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

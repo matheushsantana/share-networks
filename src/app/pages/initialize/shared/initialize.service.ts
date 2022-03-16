@@ -12,7 +12,7 @@ export class InitializeService {
     insertInitial(initalTemplate: InitialTemplate){
        return this.db.list('initialTemplate').push(initalTemplate)
         .then((result: any) =>{
-          return result;
+          return result.key;
         });
         
       }
