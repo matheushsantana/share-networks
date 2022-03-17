@@ -180,12 +180,21 @@ form select{
 
 //img perfil
 
+#loading{
+    border-radius: 20px;
+    color: white;
+    background-color: #0712aa;
+}
 .img-perfil{
     margin-top: 35px;
     text-align: center;
 }
 
-.img-perfil button{
+.img-perfil input{
+    width: 100%;
+}
+
+.img-perfil label{
     background-color: #5e6272;
     color: white;
     border-radius: 20px;
@@ -208,6 +217,31 @@ form select{
     padding: 30px;
 }
 
+#imagemPerfilCarregada{
+    max-width: 100%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #5e6272;
+    border-style: dashed;
+    object-fit: cover;
+}
+
+.btn-altera-delete button{
+    color: white;
+    background-color: #5e6272;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+#lixeiraimagemPerfil{
+    color: rgb(255, 255, 255);
+    border: none;
+    background-color: #5e6272;
+    padding: 5px;
+}
 #nameExibicao{
     padding-bottom: 40px;
     border-bottom: 0.5px solid rgba(182, 182, 182, 0.322);

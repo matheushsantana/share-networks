@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AdicionarLink } from '../shared/class/adicionarLink';
 import { Apresentacao } from '../shared/class/apresentacao';
 import { BoasVindas } from '../shared/class/boasVindas';
@@ -8,6 +8,7 @@ import { ItemCatalogo } from '../shared/class/itemCatalogo';
 import { Link } from '../shared/class/link';
 import { RedesSociais } from '../shared/class/redesSociais';
 import { InitializeService } from '../shared/initialize.service';
+import { uploadImagensService } from '../shared/uploadImagens.service';
 
 @Component({
   selector: 'app-initialize',
@@ -17,7 +18,7 @@ import { InitializeService } from '../shared/initialize.service';
 export class InitializeComponent implements OnInit {
 
   etapas: number = 3;
-  subEtapa: number = 7;
+  subEtapa: number = 0;
   auxSubEtapas: boolean = false;
   initialTemplate: InitialTemplate;
   boasVindas: BoasVindas;
@@ -28,53 +29,101 @@ export class InitializeComponent implements OnInit {
   itemCatalogo: ItemCatalogo;
   adicionarLink: AdicionarLink;
 
+  auxMostraImagemPerfil: boolean = false;
+  mostraBtnLoadingImagemPerfil: number = 0;
+
   titleSubEtapa: string[] = ['Boas-Vindas', 'Apresentação', 'Catálogo', 'Links', 'Redes sociais', 'Adicionar item', 'Adicionar link', 'Monte seu site', '']
 
-  constructor(private initializeService: InitializeService) { }
+  constructor(private initializeService: InitializeService, private uploadImagensService: uploadImagensService) { }
 
   ngOnInit(): void {
-    this.initialTemplate = new  InitialTemplate();
+    this.initialTemplate = new InitialTemplate();
     this.boasVindas = new BoasVindas();
     this.apresentacao = new Apresentacao();
-    this.catalogo = new  Catalogo();
-    this.links = new  Link();
+    this.catalogo = new Catalogo();
+    this.links = new Link();
     this.redeSociais = new RedesSociais();
   }
 
-  submitInitialTemplate(){
+  // Inicial Template
+  submitInitialTemplate() {
     this.initializeService.insertInitial(this.initialTemplate).then(m => {
-      if(m != undefined){
+      if (m != undefined) {
         this.avanca(1);
       }
     })
   }
 
-  submitBoasVindas(){
+  // Boas Vindas
+  submitBoasVindas() {
+    this.initializeService.insertBoasVindas(this.boasVindas).then(m => {
+      if (m != undefined) {
+        this.avanca(1);
+        this.subEtapa = 7;
+      }
+    })
+  }
+
+  uploadImagemPerfil(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const files = target.files as FileList;
+    this.uploadImagensService.uploadImagem(files[0])
+    this.mostraBtnLoadingImagemPerfil = 1;
+
+    var loopAuxImagem = setInterval(() => {
+      if(this.uploadImagensService.urlImagem != undefined){
+        this.boasVindas.linkImgPerfil = this.uploadImagensService.urlImagem;
+        this.auxMostraImagemPerfil = true;
+        this.mostraBtnLoadingImagemPerfil = 2;
+        clearInterval(loopAuxImagem);
+      }
+    }, 1500)
+  }
+
+  // Apresentação
+  submitApresentacao() {
+    this.initializeService.insertApresentacao(this.apresentacao).then(m => {
+      if (m != undefined) {
+        this.subEtapa = 7
+      }
+    })
+  }
+
+  // Catalogo
+  submitCatalogo() {
+    this.initializeService.insertCatalogo(this.catalogo).then(m => {
+      if (m != undefined) {
+        this.subEtapa = 7
+      }
+    })
+  }
+
+  submitItensCatalogo() {
 
   }
 
-  submitApresentacao(){
+  // Links
+  submitLinks() {
+    this.initializeService.insertLinks(this.links).then(m => {
+      if (m != undefined) {
+        this.subEtapa = 7
+      }
+    })
+  }
+
+  submitAdicionarLinks() {
 
   }
 
-  submitLinks(){
 
-  }
-
-  submitItensCatalogo(){
-
-  }
-
-  submitAdicionarLinks(){
-
-  }
+  // Muda Template
 
   avanca(value: number) {
     if (this.subEtapa == 5) {
       this.avancaSubOpcoes(2);
-    } else if(this.subEtapa == 6){
+    } else if (this.subEtapa == 6) {
       this.avancaSubOpcoes(3);
-    }else {
+    } else {
       this.auxSubEtapas = false;
       this.subEtapa = 7;
       if (value == 0) {

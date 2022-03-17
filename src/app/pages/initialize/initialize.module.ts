@@ -3,6 +3,8 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { InitializeRoutingModule } from "./initialize-routing.module";
 import { InitializeComponent } from "./initialize/initialize.component";
+import { AngularFireStorageModule } from '@angular/fire/storage'
+import { AngularFirestoreModule } from '@angular/fire/firestore'
 
 @NgModule({
     declarations: [
@@ -11,7 +13,9 @@ import { InitializeComponent } from "./initialize/initialize.component";
     imports: [
         CommonModule,
         FormsModule,
-        InitializeRoutingModule
+        InitializeRoutingModule,
+        AngularFireStorageModule,
+        AngularFirestoreModule
     ],
     providers: [],
     bootstrap: [],
