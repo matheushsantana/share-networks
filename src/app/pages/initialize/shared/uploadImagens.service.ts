@@ -12,12 +12,12 @@ import { InitializeComponent } from "../initialize/initialize.component";
     constructor(private storage: AngularFireStorage){ }
 
     uploadImagem(imagem: File){
-        let path = `myFiles/${imagem.name}`;
+        let path = `imagens/user/123456/${imagem.name}`;
         let task = this.storage.upload(path, imagem)
 
         task.snapshotChanges().subscribe((s) => {
             if(s?.task.snapshot.state == 'success'){
-                this.storage.ref(`myFiles/${imagem.name}`).getDownloadURL().subscribe(dados => {
+                this.storage.ref(`imagens/user/123456/${imagem.name}`).getDownloadURL().subscribe(dados => {
                     this.urlImagem = dados 
                 })
             }

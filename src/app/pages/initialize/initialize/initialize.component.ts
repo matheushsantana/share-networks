@@ -17,8 +17,8 @@ import { uploadImagensService } from '../shared/uploadImagens.service';
 })
 export class InitializeComponent implements OnInit {
 
-  etapas: number = 3;
-  subEtapa: number = 0;
+  etapas: number = 0;
+  subEtapa: number = 8;
   auxSubEtapas: boolean = false;
   initialTemplate: InitialTemplate;
   boasVindas: BoasVindas;
@@ -31,6 +31,7 @@ export class InitializeComponent implements OnInit {
 
   auxMostraImagemPerfil: boolean = false;
   mostraBtnLoadingImagemPerfil: number = 0;
+  auxCadaExistente: number = 0;
 
   titleSubEtapa: string[] = ['Boas-Vindas', 'Apresentação', 'Catálogo', 'Links', 'Redes sociais', 'Adicionar item', 'Adicionar link', 'Monte seu site', '']
 
@@ -43,22 +44,55 @@ export class InitializeComponent implements OnInit {
     this.catalogo = new Catalogo();
     this.links = new Link();
     this.redeSociais = new RedesSociais();
+
+    this.getInitialTemplate();
+    this.getBoasVindas();
+  }
+
+  mudaTemplate(){
+    
   }
 
   // Inicial Template
+  getInitialTemplate() {
+    this.initializeService.getAllInitial().subscribe(dados => {
+      if(dados[0] != undefined){
+        this.initialTemplate = dados[0]
+        console.log(this.initialTemplate)
+      }
+    })
+  }
+
   submitInitialTemplate() {
     this.initializeService.insertInitial(this.initialTemplate).then(m => {
       if (m != undefined) {
+        this.boasVindas.nomeExibicao = this.initialTemplate.titleSite
         this.avanca(1);
       }
     })
   }
 
   // Boas Vindas
+  getBoasVindas() {
+    this.initializeService.getAllBoasVindas().subscribe(dados => {
+      if(dados[0] != undefined){
+        if(this.auxCadaExistente == 0){
+          console.log('entrou 1')
+          this.boasVindas = dados[0]
+          this.etapas = 3;
+          this.subEtapa = 7;
+        } else {
+          this.auxCadaExistente = 2
+        }
+      } else {
+        this.auxCadaExistente = 1;
+      }
+    })
+  }
+
   submitBoasVindas() {
     this.initializeService.insertBoasVindas(this.boasVindas).then(m => {
       if (m != undefined) {
-        this.avanca(1);
         this.subEtapa = 7;
       }
     })

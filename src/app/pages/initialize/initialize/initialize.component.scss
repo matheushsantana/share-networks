@@ -184,6 +184,8 @@ form select{
     border-radius: 20px;
     color: white;
     background-color: #0712aa;
+    font-weight: 600;
+    font-size: 14px;
 }
 .img-perfil{
     margin-top: 35px;
@@ -453,5 +455,76 @@ form textarea{
     color: white;
     margin-top: 25px;
     font-size: 14px;
+    font-weight: 600;
     font-family: Inter, sans-serif;
+    border-bottom: 0.5px solid rgba(182, 182, 182, 0.322);
+    padding-bottom: 30px;
+}
+
+
+//templates
+
+.boas-vindas-template-box{
+    padding-top: 19px;
+    position: relative;
+}
+
+.template-box{
+    background-color: white;
+    height: 80px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.template-box svg{
+    background-color: #0712aa;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.template-box span{
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+#lixeiraTemplateBox{
+    background-color: rgb(240, 246, 252);
+    padding: 5px;
+    color: #5e6272;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+}
+
+.btn-sub-etapa-7{
+    margin-bottom: 20px;
+}
+
+.secao{
+    width: 47.5%;
+    margin-right: 2.5%;
+    text-align: left;
+}
+
+.secao b{
+    color: white;
+    margin-left: 10px;      
+}
+
+.secao svg{
+    background-color: #0712aa;
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.avancar{
+    background-color: #0712aa;
+    color: white;
+    width: 47.5%;
+    border-radius: 20px;
+    font-weight: 600;
 }

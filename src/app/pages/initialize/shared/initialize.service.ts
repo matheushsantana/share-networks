@@ -7,6 +7,7 @@ import { Catalogo } from "./class/catalogo";
 import { InitialTemplate } from "./class/initialTemplate";
 import { Link } from "./class/link";
 import { RedesSociais } from "./class/redesSociais";
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,19 +18,38 @@ export class InitializeService {
 
   // Inital
   insertInitial(initalTemplate: InitialTemplate) {
-    return this.db.list('cliente/site/initialTemplate').push(initalTemplate)
+    return this.db.list('cliente/123456/site/initialTemplate').push(initalTemplate)
       .then((result: any) => {
         return result.key;
       });
+  }
 
+  getAllInitial(){
+    return this.db.list('cliente/123456/site/initialTemplate')
+    .snapshotChanges()
+    .pipe(
+      map(changes => {
+        return changes.map(c => ({ key: c.payload.key, ...c.payload.exportVal() }));
+      })
+    );
   }
 
   // Boas Vindas
   insertBoasVindas(boasvindas: BoasVindas){
-    return this.db.list('cliente/site/boas-vindas').push(boasvindas)
+    return this.db.list('cliente/123456/site/boas-vindas').push(boasvindas)
       .then((result: any) => {
         return result.key;
       });
+  }
+
+  getAllBoasVindas(){
+    return this.db.list('cliente/123456/site/boas-vindas')
+    .snapshotChanges()
+    .pipe(
+      map(changes => {
+        return changes.map(c => ({ key: c.payload.key, ...c.payload.exportVal() }));
+      })
+    );
   }
 
   // Apresentação
