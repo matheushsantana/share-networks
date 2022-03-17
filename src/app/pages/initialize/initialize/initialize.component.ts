@@ -33,7 +33,14 @@ export class InitializeComponent implements OnInit {
   mostraBtnLoadingImagemPerfil: number = 0;
   auxCadaExistente: number = 0;
 
+  boxBoasvindas: boolean = false;
+  boxApresentacao: boolean = false;
+  boxCatalogo: boolean = false;
+  boxLinks: boolean = false;
+  boxRedesSociais: boolean = false;
+
   titleSubEtapa: string[] = ['Boas-Vindas', 'Apresentação', 'Catálogo', 'Links', 'Redes sociais', 'Adicionar item', 'Adicionar link', 'Monte seu site', '']
+  opcoes:any[]
 
   constructor(private initializeService: InitializeService, private uploadImagensService: uploadImagensService) { }
 
@@ -45,24 +52,74 @@ export class InitializeComponent implements OnInit {
     this.links = new Link();
     this.redeSociais = new RedesSociais();
 
-    this.getInitialTemplate();
-    this.getBoasVindas();
+    this.getTemplates();
   }
 
-  mudaTemplate(){
-    
-  }
-
-  // Inicial Template
-  getInitialTemplate() {
-    this.initializeService.getAllInitial().subscribe(dados => {
-      if(dados[0] != undefined){
-        this.initialTemplate = dados[0]
-        console.log(this.initialTemplate)
+  getTemplates() {
+    this.initializeService.getSite().subscribe(dados => {
+      if (dados[0] != undefined) {
+        if (this.auxCadaExistente == 0) {
+          this.boasVindas = dados[0]
+          this.etapas = 3;
+          this.subEtapa = 7;
+        } else {
+          this.auxCadaExistente = 2
+        }
+        this.mostraBoxExistentes(dados)
+      } else {
+        this.auxCadaExistente = 1;
       }
     })
   }
 
+  mostraBoxExistentes(dados: any) {
+    this.opcoes = [
+      {
+        'key': 'boas-vindas',
+        'value': false
+      },
+      {
+        'key': 'apresentacao',
+        'value': false
+      },
+      { 
+        'key': 'catalogo',
+        'value': false
+      },
+      { 
+        'key': 'links',
+        'value': false
+      }, 
+      { 
+        'key': 'redes-sociais',
+        'value': false
+      }
+    ]
+    for (var i = 0; i < dados.length; i++) {
+      if(dados[i].key == 'boas-vindas'){
+        this.boasVindas = dados[i];
+      }
+      if(dados[i].key == 'apresentacao'){
+        this.apresentacao = dados[i];
+      }
+      if(dados[i].key == 'catalogo'){
+        this.catalogo = dados[i];
+      }
+      if(dados[i].key == 'links'){
+        this.links = dados[i];
+      }
+      if(dados[i].key == 'redes-sociais'){
+        this.redeSociais = dados[i];
+      }
+      for (var j = 0; j < this.opcoes.length; j++) {
+        if (dados[i].key == this.opcoes[j].key) {
+          this.opcoes[j].value = true
+        }
+      }
+    }
+  }
+
+  // Inicial Template
   submitInitialTemplate() {
     this.initializeService.insertInitial(this.initialTemplate).then(m => {
       if (m != undefined) {
@@ -73,23 +130,6 @@ export class InitializeComponent implements OnInit {
   }
 
   // Boas Vindas
-  getBoasVindas() {
-    this.initializeService.getAllBoasVindas().subscribe(dados => {
-      if(dados[0] != undefined){
-        if(this.auxCadaExistente == 0){
-          console.log('entrou 1')
-          this.boasVindas = dados[0]
-          this.etapas = 3;
-          this.subEtapa = 7;
-        } else {
-          this.auxCadaExistente = 2
-        }
-      } else {
-        this.auxCadaExistente = 1;
-      }
-    })
-  }
-
   submitBoasVindas() {
     this.initializeService.insertBoasVindas(this.boasVindas).then(m => {
       if (m != undefined) {
@@ -105,7 +145,7 @@ export class InitializeComponent implements OnInit {
     this.mostraBtnLoadingImagemPerfil = 1;
 
     var loopAuxImagem = setInterval(() => {
-      if(this.uploadImagensService.urlImagem != undefined){
+      if (this.uploadImagensService.urlImagem != undefined) {
         this.boasVindas.linkImgPerfil = this.uploadImagensService.urlImagem;
         this.auxMostraImagemPerfil = true;
         this.mostraBtnLoadingImagemPerfil = 2;
