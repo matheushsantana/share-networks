@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AdicionarLink } from '../shared/class/adicionarLink';
 import { Apresentacao } from '../shared/class/apresentacao';
 import { BoasVindas } from '../shared/class/boasVindas';
