@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { AdicionarLink } from '../shared/class/adicionarLink';
-import { Apresentacao } from '../shared/class/apresentacao';
-import { BoasVindas } from '../shared/class/boasVindas';
-import { Catalogo } from '../shared/class/catalogo';
-import { InitialTemplate } from '../shared/class/initialTemplate';
-import { ItemCatalogo } from '../shared/class/itemCatalogo';
-import { Link } from '../shared/class/link';
-import { RedesSociais } from '../shared/class/redesSociais';
+import { AdicionarLink } from '../../criacao/shared/class/adicionarLink';
+import { Apresentacao } from '../../criacao/shared/class/apresentacao';
+import { BoasVindas } from '../../criacao/shared/class/boasVindas';
+import { Catalogo } from '../../criacao/shared/class/catalogo';
+import { InitialTemplate } from '../../criacao/shared/class/initialTemplate';
+import { ItemCatalogo } from '../../criacao/shared/class/itemCatalogo';
+import { Link } from '../../criacao/shared/class/link';
+import { RedesSociais } from '../../criacao/shared/class/redesSociais';
 import { InitializeService } from '../shared/initialize.service';
-import { uploadImagensService } from '../shared/uploadImagens.service';
+import { uploadImagensService } from '../../criacao/shared/uploadImagens.service';
 
 @Component({
   selector: 'app-initialize',
@@ -98,6 +98,7 @@ export class InitializeComponent implements OnInit {
     for (var i = 0; i < dados.length; i++) {
       if(dados[i].key == 'boas-vindas'){
         this.boasVindas = dados[i];
+        console.log('boas vindas: ', dados[i])
       }
       if(dados[i].key == 'apresentacao'){
         this.apresentacao = dados[i];
@@ -121,6 +122,7 @@ export class InitializeComponent implements OnInit {
 
   // Inicial Template
   submitInitialTemplate() {
+    console.log('1; ',this.initialTemplate)
     this.initializeService.insertInitial(this.initialTemplate).then(m => {
       if (m != undefined) {
         this.boasVindas.nomeExibicao = this.initialTemplate.titleSite

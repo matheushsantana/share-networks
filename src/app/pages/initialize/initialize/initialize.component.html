@@ -546,7 +546,7 @@
                                     </svg>
                                     <b>Seção</b>
                                 </button>
-                                <button class="btn avancar">Avançar</button>
+                                <button class="btn avancar" (click)="avanca(1)">Avançar</button>
                             </div>
                         </div>
                     </div>
@@ -555,7 +555,12 @@
         </div>
     </div>
     <div class="etapa-4" *ngIf="etapas == 4">
-
+        <div class="content-view-site">
+            <div class="boasVindas-view">
+                <span>{{ boasVindas.nomeExibicao }}</span>
+                <img src="{{ boasVindas.linkImgPerfil }}">
+            </div>
+        </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -567,7 +572,7 @@
                 </div>
                 <div class="modal-body">
                     <ul>
-                        <li (click)="avancaOpcoes(0)" data-bs-dismiss="modal" aria-label="Close">
+                        <li (click)="avancaOpcoes(0)" data-bs-dismiss="modal" aria-label="Close" *ngIf="opcoes[0].value == false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                                 class="bi bi-star" viewBox="0 0 16 16">
                                 <path
@@ -575,7 +580,7 @@
                             </svg>
                             Boas-Vindas
                         </li>
-                        <li (click)="avancaOpcoes(1)" data-bs-dismiss="modal" aria-label="Close">
+                        <li (click)="avancaOpcoes(1)" data-bs-dismiss="modal" aria-label="Close" *ngIf="opcoes[1].value == false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                                 class="bi bi-journal-text" viewBox="0 0 16 16">
                                 <path
@@ -587,7 +592,7 @@
                             </svg>
                             Apresentação
                         </li>
-                        <li (click)="avancaOpcoes(2)" data-bs-dismiss="modal" aria-label="Close">
+                        <li (click)="avancaOpcoes(2)" data-bs-dismiss="modal" aria-label="Close" *ngIf="opcoes[2].value == false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                                 class="bi bi-postcard" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -596,7 +601,7 @@
                             Catálogo
 
                         </li>
-                        <li (click)="avancaOpcoes(3)" data-bs-dismiss="modal" aria-label="Close">
+                        <li (click)="avancaOpcoes(3)" data-bs-dismiss="modal" aria-label="Close" *ngIf="opcoes[3].value == false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                                 class="bi bi-linkedin" viewBox="0 0 16 16">
                                 <path
@@ -605,7 +610,7 @@
                             Links
 
                         </li>
-                        <li (click)="avancaOpcoes(4)" data-bs-dismiss="modal" aria-label="Close">
+                        <li (click)="avancaOpcoes(4)" data-bs-dismiss="modal" aria-label="Close" *ngIf="opcoes[4].value == false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                                 class="bi bi-share" viewBox="0 0 16 16">
                                 <path

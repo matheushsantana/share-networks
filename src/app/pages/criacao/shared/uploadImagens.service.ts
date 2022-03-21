@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { AngularFireStorage } from "@angular/fire/storage";
-import { InitializeComponent } from "../initialize/initialize.component";
 
 @Injectable({
     providedIn: 'root'
