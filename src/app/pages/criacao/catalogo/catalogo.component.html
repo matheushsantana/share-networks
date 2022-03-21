@@ -1,1 +1,16 @@
-<p>catalogo works!</p>
+<div class="container">
+    <form #i="ngForm" (ngSubmit)="submitCatalogo()">
+        <div class="mb-3" id="nameExibicao">
+            <label for="tituloCatalogo" class="form-label">TÍTULO DA PAGINA</label>
+            <input type="email" class="form-control" id="tituloCatalogo" name="tituloCatalogo
+            tituloCatalogo" [(ngModel)]="catalogo.tituloPagina" aria-describedby="tituloCatalogo
+                tituloCatalogo" required>
+        </div>
+        <label for="exampleInputEmail1" class="form-label">SEUS ITENS</label>
+        <div class="seus-itens">
+            <p>ADICIONAR ITEM</p>
+        </div>
+        <button class="btn cancelar">Cancelar</button>
+        <button class="btn salvar" [disabled]="!i.valid">Salvar</button>
+    </form>
+</div>

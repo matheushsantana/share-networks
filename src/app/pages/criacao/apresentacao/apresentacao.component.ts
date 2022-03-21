@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InitializeService } from '../../initialize/shared/initialize.service';
+import { Apresentacao } from '../shared/class/apresentacao';
 
 @Component({
   selector: 'app-apresentacao',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApresentacaoComponent implements OnInit {
 
-  constructor() { }
+  apresentacao: Apresentacao;
+
+  constructor(private initializeService: InitializeService) { }
 
   ngOnInit(): void {
+  }
+
+  submitApresentacao() {
+    this.initializeService.insertApresentacao(this.apresentacao).then(m => {
+      if (m != undefined) {
+        //this.subEtapa = 7
+      }
+    })
   }
 
 }

@@ -1,0 +1,35 @@
+.content{
+    text-align: center;
+    height: 100%;
+}
+
+.titulo{
+    margin-top: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.sub-titulo{
+    color: white;
+    font-weight: 600;
+}
+
+.tab-initialize{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: #262A34;
+    text-align: center;
+}
+
+.tab-initialize svg{
+    color: white;
+    background-color: #0712aa;
+    border-radius: 30px;
+    border: 3px solid #181A20;
+    position: relative;
+    top: -25px;
+    padding: 5px;
+}

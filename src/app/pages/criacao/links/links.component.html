@@ -1,1 +1,15 @@
-<p>links works!</p>
+<div class="container">
+    <form #j="ngForm" (ngSubmit)="submitLinks()">
+        <div class="mb-3" id="nameExibicao">
+            <label for="tituloLink" class="form-label">TÍTULO DA PAGINA</label>
+            <input type="email" class="form-control" id="tituloLink" name="tituloLink"
+                [(ngModel)]="links.tituloDaPagina" aria-describedby="tituloLink" required>
+        </div>
+        <label for="exampleInputEmail1" class="form-label">SEUS LINKS</label>
+        <div class="seus-itens">
+            <p>ADICIONAR LINK</p>
+        </div>
+        <button class="btn cancelar">Cancelar</button>
+        <button class="btn salvar" [disabled]="!j.valid">Salvar</button>
+    </form>
+</div>

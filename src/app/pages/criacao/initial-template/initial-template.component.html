@@ -1,1 +1,43 @@
-<p>initial-template works!</p>
+<div class="voltar">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" [routerLink]="['/criacao/inicio']"
+        class="bi bi-arrow-left-short" viewBox="0 0 16 16" id="btn-voltar">
+        <path fill-rule="evenodd"
+            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+    </svg>
+    <div class="titleEtapa">
+        <span id="titleEtapa"></span>
+    </div>
+</div>
+<div class="container" id="container-2">
+    <div class="content-2">
+        <div class="div-titulo">
+            <p class="titulo-etapa-2">Dê um título para o seu template</p>
+        </div>
+        <form #f="ngForm" (ngSubmit)="submitInitialTemplate()">
+            <div class="mb-3">
+                <label for="titleSiteInput" class="form-label">TÍTULO DO SITE*</label>
+                <input type="text" class="form-control" id="titleSiteInput" aria-describedby="Título do Site"
+                    name="titleSiteInput" [(ngModel)]="initialTemplate.titleSite" required>
+            </div>
+            <label for="inputRamo" class="form-label">QUAL O SEU RAMO DE ATUAÇÃO*</label>
+            <select id="inputRamo" class="form-select" name="inputRamo" [(ngModel)]="initialTemplate.ramo"
+                required>
+                <option value="autor">Autor (a)</option>
+                <option value="artista">Artista</option>
+                <option value="designer">Designer</option>
+                <option value="Empreendedor">Empreendedor (a)</option>
+                <option value="fotografo">Fotógrafo (a)</option>
+                <option value="influenciador">Influenciador (a)</option>
+                <option value="infoprodutor">Infoprodutor(a)</option>
+                <option value="educacao">Educação</option>
+                <option value="health">Saúde e bem estar</option>
+                <option value="food">Alimentos e bebidas</option>
+                <option value="social_projects">ONGs e projetos sociais</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="marketing">Marketing e Comunicação</option>
+                <option value="outro">Outro</option>
+            </select>
+            <button class="btn" type="submit" id="btn-avançar" [disabled]="!f.valid">Avançar</button>
+        </form>
+    </div>
+</div>

@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', loadChildren: () => import('./pages/cadastro/cadastro.module').then(m => m.CadastroModule) },
   { path: 'profile', loadChildren: () => import('./pages/public-profile-all/public-profile.module').then(m => m.PublicProfileModule) },
-  { path: 'initialize', loadChildren: () => import('./pages/initialize/initialize.module').then(m => m.InitializeModule ) }
+  { path: 'criacao', loadChildren: () => import('./pages/criacao/criacao.module').then(m => m.CriacaoModule) }
 ];
 
 @NgModule({

@@ -16,13 +16,14 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.navBarConfig();
+    //this.navBarConfig();
   }
 
-  navBarConfig(){
-    if(window.location.href.split('/')[3] == 'initialize'){
+  /*navBarConfig(){
+    console.log(window.location.href.split('/')[4])
+    if(window.location.href.split('/')[3] == 'criacao' && window.location.href.split('/')[4] == 'template-inicial'){
       this.navBar = false;
     }
-  }
+  }*/
 
 }

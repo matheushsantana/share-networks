@@ -1,0 +1,134 @@
+#loading{
+    border-radius: 20px;
+    color: white;
+    background-color: #0712aa;
+    font-weight: 600;
+    font-size: 14px;
+}
+.img-perfil{
+    margin-top: 35px;
+    text-align: center;
+}
+
+.img-perfil input{
+    width: 100%;
+}
+
+.img-perfil label{
+    background-color: #5e6272;
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.img-perfil p {
+    color: #5e6272;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+.img-perfil svg {
+    color: #5e6272;
+    border-radius: 50%;
+    border: 2px solid;
+    border-style: dashed;
+    padding: 30px;
+}
+
+#imagemPerfilCarregada{
+    max-width: 100%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #5e6272;
+    border-style: dashed;
+    object-fit: cover;
+}
+
+.btn-altera-delete button{
+    color: white;
+    background-color: #5e6272;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+#lixeiraimagemPerfil{
+    color: rgb(255, 255, 255);
+    border: none;
+    background-color: #5e6272;
+    padding: 5px;
+}
+
+#nameExibicao{
+    padding-bottom: 40px;
+    border-bottom: 0.5px solid rgba(182, 182, 182, 0.322);
+}
+
+#title-text{
+    margin-top: 30px;
+    border-bottom: 0.5px solid rgba(182, 182, 182, 0.322);
+    padding-bottom: 20px;
+}
+
+form textarea{
+    border: 2px solid #5e6272;
+    background-color: transparent;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#info-btn-1{
+    margin-top: 30px;
+}
+
+#info-btn-2{
+    padding-bottom: 40px;
+}
+
+.salvar{
+    background-color: #0712aa;
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: absolute;
+    right: 10%;
+}
+
+.cancelar{
+    font-weight: 600;
+    color: white;
+}
+
+.container{
+    width: 90%;
+}
+
+form{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+form label {
+    color: #5e6272;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+form input{
+    border: 2px solid #5e6272;
+    background-color: transparent;
+    border-radius: 10px;
+    height: 50px;
+    color: white;
+    font-weight: 600;
+}

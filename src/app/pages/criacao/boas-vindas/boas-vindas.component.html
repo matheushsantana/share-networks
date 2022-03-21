@@ -1,1 +1,65 @@
-<p>boas-vindas works!</p>
+<div class="container">
+    <div class="img-perfil">
+        <div class="row">
+            <div class="col">
+                <p>IMAGEM DE PERFIL</p>
+                <span class="btn" id="loading" *ngIf="mostraBtnLoadingImagemPerfil == 1">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    CARREGANDO
+                </span>
+                <div class="btn-altera-delete" *ngIf="mostraBtnLoadingImagemPerfil == 2">
+                    <button class="btn">ALTERAR</button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-trash" viewBox="0 0 16 16" id="lixeiraimagemPerfil">
+                        <path
+                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                        <path fill-rule="evenodd"
+                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                    </svg>
+                </div>
+                <label class="btn" for="imagemPerfil" *ngIf="mostraBtnLoadingImagemPerfil == 0">ADICIONAR</label>
+                <input type="file" class="form-control" id="imagemPerfil" style="display: none;" name="imagemPerfil"
+                    (change)="uploadImagemPerfil($event)">
+            </div>
+            <div class="col">
+                <img id="imagemPerfilCarregada" src="{{boasVindas.linkImgPerfil }}" alt=""
+                    *ngIf="auxMostraImagemPerfil == true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor"
+                    *ngIf="auxMostraImagemPerfil == false" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="nomeExibicao">
+        <form #g="ngForm" (ngSubmit)="submitBoasVindas()">
+            <div class="mb-3" id="nameExibicao">
+                <label for="nomeExibicao" class="form-label">NOME DE EXIBIÇÃO</label>
+                <input type="text" class="form-control" id="nomeExibicao" name="nomeExibicao"
+                    [(ngModel)]="boasVindas.nomeExibicao" aria-describedby="nomeExibicao" required>
+            </div>
+            <div class="col-md-6" id="title-text">
+                <label for="tituloExibicao" class="form-label">TÍTULO EM DESTAQUE</label>
+                <textarea class="form-control" id="tituloExibicao" rows="3" name="tituloExibicao"
+                    [(ngModel)]="boasVindas.tituloEmDestaque" required></textarea>
+
+                <label for="textoApoio" class="form-label">TEXTO DE APOIO</label>
+                <textarea class="form-control" id="textoApoio" rows="3" name="textoApoio"
+                    [(ngModel)]="boasVindas.textoDeApoio" required></textarea>
+            </div>
+            <div class="mb-3" id="info-btn-1">
+                <label for="tituloBotao" class="form-label">TÍTULO DO BOTÃO</label>
+                <input type="text" class="form-control" id="tituloBotao" name="tituloBotao"
+                    [(ngModel)]="boasVindas.tituloBotao" aria-describedby="tituloBotao" required>
+            </div>
+            <div class="mb-3" id="info-btn-2">
+                <label for="linkBtn" class="form-label">LINK DO BOTÃO</label>
+                <input type="text" class="form-control" id="linkBtn" name="textoApoio"
+                    [(ngModel)]="boasVindas.linkBotao" aria-describedby="linkBtn" required>
+            </div>
+            <button class="btn cancelar">Cancelar</button>
+            <button class="btn salvar" [disabled]="!g.valid">Salvar</button>
+        </form>
+    </div>
+</div>

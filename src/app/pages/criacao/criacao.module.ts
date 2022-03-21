@@ -9,6 +9,11 @@ import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { LinksComponent } from './links/links.component';
 import { RedesSociaisComponent } from './redes-sociais/redes-sociais.component';
+import { CriacaoRoutingModule } from "./criacao-routing.module";
+import { InicioComponent } from './inicio/inicio.component';
+import { SecoesComponent } from './secoes/secoes.component';
+import { PreviewComponent } from './preview/preview.component';
+import { MonteSeuSiteComponent } from './monte-seu-site/monte-seu-site.component';
 
 @NgModule({
     declarations: [
@@ -17,11 +22,16 @@ import { RedesSociaisComponent } from './redes-sociais/redes-sociais.component';
         ApresentacaoComponent,
         CatalogoComponent,
         LinksComponent,
-        RedesSociaisComponent
+        RedesSociaisComponent,
+        InicioComponent,
+        SecoesComponent,
+        PreviewComponent,
+        MonteSeuSiteComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
+        CriacaoRoutingModule,
         AngularFireStorageModule,
         AngularFirestoreModule
     ],

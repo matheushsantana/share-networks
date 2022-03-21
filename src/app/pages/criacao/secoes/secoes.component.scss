@@ -1,0 +1,69 @@
+#btn-adc-secao{
+    margin-top: 30px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#btn-adc-secao svg{
+    margin-left: 10px;
+    color: white;
+    background-color: #0712aa;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.content{
+    text-align: center;
+    height: 100%;
+}
+
+.titulo{
+    margin-top: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.sub-titulo{
+    color: white;
+    font-weight: 600;
+}
+
+// modal
+
+.modal-header p{
+    font-weight: 600;
+    color: rgb(58, 55, 55);
+}
+
+.modal-content{
+    margin-left: 5%;
+    border-radius: 20px;
+    width: 90%;
+    height: 50%;
+    margin-top: 25%;
+}
+
+.modal-body ul{
+    list-style: none;
+    position: relative;
+    left: -40px;
+}
+
+.modal-body li{
+    font-weight: 600;
+    color: rgb(58, 55, 55);
+    margin: 15px;
+}
+
+.modal-body li svg{
+    background-color: rgb(240, 243, 250);
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: black;
+}

@@ -1,0 +1,55 @@
+.container{
+    width: 90%;
+}
+
+.redes-sociais{
+    margin-top: 20px;
+}
+
+.redes-sociais label{
+    color: #5e6272;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.input-redes{
+    height: 50px;
+    border: 2px solid #5e6272;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.text-input{
+    color: #5e6272;
+    font-weight: 700;
+    margin-left: 15px;
+    font-size: 15px;
+    margin-top: 9px;
+}
+
+.input-redes svg{
+    margin-right: 10px;
+}
+
+.btn-redes{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.salvar{
+    background-color: #0712aa;
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: absolute;
+    right: 10%;
+}
+
+.cancelar{
+    font-weight: 600;
+    color: white;
+}
