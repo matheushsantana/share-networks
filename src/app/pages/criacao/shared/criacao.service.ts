@@ -27,12 +27,7 @@ import { map } from 'rxjs/operators';
   
     // Inital
     insertInitial(initalTemplate: InitialTemplate) {
-      var key: string = 'initialTemplate'
-      console.log(key, initalTemplate)
-      return this.db.list('cliente/123456/site').update(key, initalTemplate)
-        .catch((error: any) => {
-          console.error(error);
-        });
+      return this.db.list('cliente/123456/site').update('initialTemplate', initalTemplate)
     }
   
     // Boas Vindas

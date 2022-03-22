@@ -1,3 +1,13 @@
+<div class="voltar">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" data-bs-toggle="modal"
+        data-bs-target="#delete" class="bi bi-arrow-left-short" viewBox="0 0 16 16" id="btn-voltar">
+        <path fill-rule="evenodd"
+            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+    </svg>
+    <div class="titleEtapa">
+        <span id="titleEtapa"></span>
+    </div>
+</div>
 <div class="container">
     <div class="content">
         <p class="titulo">Vamos cadastrar a sua primeira seção?</p>
@@ -5,8 +15,8 @@
             Cada seção abrirá uma página onde você vai adicionar conteúdos e salvar.</p>
         <button type="button" class="btn" id="btn-adc-secao" data-bs-toggle="modal"
             data-bs-target="#exampleModal">Adicionar seção
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                class="bi bi-plus" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus"
+                viewBox="0 0 16 16">
                 <path
                     d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
             </svg>
@@ -24,7 +34,7 @@
             </div>
             <div class="modal-body">
                 <ul>
-                    <li data-bs-dismiss="modal" aria-label="Close">
+                    <li data-bs-dismiss="modal" aria-label="Close" [routerLink]="['/criacao/boas-vindas']">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                             class="bi bi-star" viewBox="0 0 16 16">
                             <path
@@ -32,7 +42,7 @@
                         </svg>
                         Boas-Vindas
                     </li>
-                    <li data-bs-dismiss="modal" aria-label="Close">
+                    <li data-bs-dismiss="modal" aria-label="Close" [routerLink]="['/criacao/Apresentacao']">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                             class="bi bi-journal-text" viewBox="0 0 16 16">
                             <path
@@ -44,7 +54,7 @@
                         </svg>
                         Apresentação
                     </li>
-                    <li data-bs-dismiss="modal" aria-label="Close">
+                    <li data-bs-dismiss="modal" aria-label="Close" [routerLink]="['/criacao/catalogo']">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                             class="bi bi-postcard" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -53,7 +63,7 @@
                         Catálogo
 
                     </li>
-                    <li data-bs-dismiss="modal" aria-label="Close">
+                    <li data-bs-dismiss="modal" aria-label="Close" [routerLink]="['/criacao/links']">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                             class="bi bi-linkedin" viewBox="0 0 16 16">
                             <path
@@ -62,7 +72,7 @@
                         Links
 
                     </li>
-                    <li data-bs-dismiss="modal" aria-label="Close">
+                    <li data-bs-dismiss="modal" aria-label="Close" [routerLink]="['/criacao/redes-sociais']">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                             class="bi bi-share" viewBox="0 0 16 16">
                             <path
@@ -71,6 +81,22 @@
                         Redes Sociais
                     </li>
                 </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal alert delee-->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <span>Você possui alterações não publicadas, Deseja descartá-las?</span>
+                <div class="d-grid gap-2 col-8 mx-auto">
+                    <button class="btn btn-danger descartar" type="button" data-bs-dismiss="modal"
+                        [routerLink]="['/criacao/template-inicial']">Descartar alterações</button>
+                    <button class="btn continuar" type="button" data-bs-dismiss="modal">Continuar aqui</button>
+                </div>
             </div>
         </div>
     </div>

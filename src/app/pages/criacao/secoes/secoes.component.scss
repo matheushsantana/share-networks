@@ -1,3 +1,41 @@
+.voltar{
+    //border-bottom: 0.5px solid rgba(182, 182, 182, 0.322);
+    display: flex;
+}
+
+.titleEtapa{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#titleEtapa{
+    color: white;
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+}
+
+#btn-voltar{
+    color: white;
+    background-color: #3A3F50;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.titulo-etapa-2{
+    color: white;
+    text-align: left;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+.div-titulo{
+    width: 70%;
+}
+
 #btn-adc-secao{
     margin-top: 30px;
     background-color: #FFFFFF;
@@ -22,7 +60,7 @@
 }
 
 .titulo{
-    margin-top: 30px;
+    margin-top: 20px;
     color: white;
     font-size: 30px;
     font-weight: 700;
@@ -66,4 +104,29 @@
     border-radius: 5px;
     margin-right: 10px;
     color: black;
+}
+
+#delete span{
+    font-weight: 700;
+    color: white;
+}
+
+#delete .modal-content{
+    padding-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #262A34;
+}
+
+.descartar{
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.continuar{
+    color: rgb(120, 120, 120);
+    font-weight: 600;
+    margin-top: 20px;
 }

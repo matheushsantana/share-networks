@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { InitializeService } from '../../initialize/shared/initialize.service';
+import { Router } from '@angular/router';
 import { InitialTemplate } from '../shared/class/initialTemplate';
+import { CriacaoService } from '../shared/criacao.service';
 
 @Component({
   selector: 'app-initial-template',
@@ -11,18 +12,16 @@ export class InitialTemplateComponent implements OnInit {
   
   initialTemplate: InitialTemplate;
 
-  constructor(private initializeService: InitializeService) { }
+  constructor(private criacaoService: CriacaoService, private route: Router) { }
 
   ngOnInit(): void {
+    this.initialTemplate = new InitialTemplate();
   }
 
   submitInitialTemplate() {
-    console.log('1; ',this.initialTemplate)
-    this.initializeService.insertInitial(this.initialTemplate).then(m => {
-      if (m != undefined) {
-        //this.boasVindas.nomeExibicao = this.initialTemplate.titleSite
-        //this.avanca(1);
-      }
-    })
+    this.criacaoService.insertInitial(this.initialTemplate).catch((error: any) => {
+      alert(error);
+    });
+    this.route.navigate(['/criacao/secoes'])
   }
 }
