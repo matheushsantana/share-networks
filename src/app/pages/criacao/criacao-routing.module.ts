@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AuthGuardCriacao } from "src/app/guards/authGuardsCriacao.service";
 import { ApresentacaoComponent } from "./apresentacao/apresentacao.component";
 import { BoasVindasComponent } from "./boas-vindas/boas-vindas.component";
 import { CatalogoComponent } from "./catalogo/catalogo.component";
@@ -12,16 +13,16 @@ import { RedesSociaisComponent } from "./redes-sociais/redes-sociais.component";
 import { SecoesComponent } from "./secoes/secoes.component";
 
 const routes: Routes = [
-    { path: 'inicio', component: InicioComponent },
-    { path: 'template-inicial', component: InitialTemplateComponent },
-    { path: 'secoes', component: SecoesComponent },
-    { path: 'apresentacao', component: ApresentacaoComponent },
-    { path: 'boas-vindas', component: BoasVindasComponent },
-    { path: 'catalogo', component: CatalogoComponent },
-    { path: 'links', component: LinksComponent },
-    { path: 'redes-sociais', component: RedesSociaisComponent },
-    { path: 'monte-seu-site', component: MonteSeuSiteComponent },
-    { path: 'preview', component: PreviewComponent }
+    { path: 'inicio', component: InicioComponent, canActivate: [AuthGuardCriacao] },
+    { path: 'template-inicial', component: InitialTemplateComponent, canActivate: [AuthGuardCriacao] },
+    { path: 'secoes', component: SecoesComponent, canActivate: [AuthGuardCriacao] },
+    { path: 'apresentacao', component: ApresentacaoComponent, canActivate: [AuthGuardCriacao] },
+    { path: 'boas-vindas', component: BoasVindasComponent, canActivate: [AuthGuardCriacao] },
+    { path: 'catalogo', component: CatalogoComponent, canActivate: [AuthGuardCriacao] },
+    { path: 'links', component: LinksComponent, canActivate: [AuthGuardCriacao] },
+    { path: 'redes-sociais', component: RedesSociaisComponent, canActivate: [AuthGuardCriacao] },
+    { path: 'monte-seu-site', component: MonteSeuSiteComponent, canActivate: [AuthGuardCriacao] },
+    { path: 'preview', component: PreviewComponent, canActivate: [AuthGuardCriacao] }
  ];
  
  @NgModule({

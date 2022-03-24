@@ -14,6 +14,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { SecoesComponent } from './secoes/secoes.component';
 import { PreviewComponent } from './preview/preview.component';
 import { MonteSeuSiteComponent } from './monte-seu-site/monte-seu-site.component';
+import { AuthGuardCriacao } from "src/app/guards/authGuardsCriacao.service";
 
 @NgModule({
     declarations: [
@@ -35,7 +36,7 @@ import { MonteSeuSiteComponent } from './monte-seu-site/monte-seu-site.component
         AngularFireStorageModule,
         AngularFirestoreModule
     ],
-    providers: [],
+    providers: [ AuthGuardCriacao ],
     bootstrap: [],
     schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
   })

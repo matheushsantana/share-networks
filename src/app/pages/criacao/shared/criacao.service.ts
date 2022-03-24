@@ -14,7 +14,8 @@ import { map } from 'rxjs/operators';
   export class CriacaoService {
   
     constructor(private db: AngularFireDatabase) { }
-  
+
+    // Pegar todos os dados
     getSite() {
       return this.db.list(`cliente/123456/site`)
         .snapshotChanges()
